@@ -8,11 +8,16 @@ export default function TaskApp() {
     const [tasks, setTasks] = useState([]);
 
     const handleSubmit = () => {
-  };
+        /* Task 2:*/
+        if (text.trim() === "") return;
+        setTasks((prev) => [...prev, { id: Date.now(), text }]);
+        setText("");
+    };
 
   
   const handleDelete = (id) => {
     // TODO: filter tasks by id to remove the clicked one
+      setTasks((prev) => prev.filter((task) => task.id !== id));
 
   };
 
